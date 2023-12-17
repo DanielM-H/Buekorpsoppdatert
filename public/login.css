@@ -1,8 +1,7 @@
 body {
-    margin: 0;
     padding: 0;
-    background-color: #1B1B1E;
-    color: whitesmoke;
+    background-color: #F5F5F5;
+    color: #333;
 }
 
 .main {
@@ -18,12 +17,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 10rem 0 0 0;
-    padding: 2rem 5rem 3rem 5rem;
-    width: 20rem;
-    background-color: #282828;
-    border-radius: 25px;
-    border: 1px solid black;
+    margin: 5rem 0 0 0;
+    padding: 2rem 3rem 2rem 3rem;
+    width: 25rem;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    border: 1px solid #E0E0E0;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .loginForm {
@@ -32,16 +32,40 @@ body {
     align-items: center;
 }
 
-.noUser, .hasUser {
+.noUser {
     display: flex;
-    margin: 1rem 0 0 0;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: #ff6347;
+    color: #fff;
+    border-radius: 5px;
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
-label, input, select {
-    display: flex;
-    margin: 0.5rem 0 0 0;
+.noUser:hover  {
+    background-color: #ff4500;
 }
 
-a {
-    color: whitesmoke;
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
 }
+

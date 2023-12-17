@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hjem</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Leder</h1>
+        <div class="userList">
+            <div id="queryList"></div>
+        </div>
+
+        <div class="modal hidden"> <!-- Dette er modalen for redigeringsfunksjonen (standard skjult) -->
+            <button class="modalButton" onclick="openModal()">Lukk</button>
+            <form class="modalForm" action="/updateUser" method="POST">
+                <label for="username">Nåværende Brukernavn</label>
+                <input type="text" name="username" id="username" value="" readonly>
+                <label for="new_username">Nytt brukernavn</label>
+                <input type="text" name="new_username" id="new_username" value="">
+                <label for="password">Passord</label>
+                <input type="password" name="password" id="password">
+                <label for="role">Rolle</label>
+                <select name="role" id="role">
+                    <option value="Medlem">Medlem</option>
+                    <option value="Leder">Leder</option> <!-- Lagt til alternativ for "Leder" -->
+                </select>
+                <label for="company">Kompani:</label>
+                <select name="company" id="company">
+                    <option value="1">Kompani 1</option>
+                    <option value="2">Kompani 2</option>
+                    <!-- legg til andre kompanier etter behov -->
+                </select>
+
+                <label for="platoon">Peletong:</label>
+                <select name="platoon" id="platoon">
+                    <option value="1">Peletong 1, komp 1</option>
+                    <option value="2">Peletong 2, komp 1</option>
+                    <option value="3">Peletong 1, komp 2</option>
+                    <option value="4">Peletong 2, komp 2</option>
+                    <!-- legg til andre peletonger etter behov -->
+                </select>
+                <label for="first_name">Fornavn</label>
+                <input type="text" name="first_name" id="first_name" value="">
+                <label for="last_name">Etternavn</label>
+                <input type="text" name="last_name" id="last_name" value="">
+                <label for="phone">Telefon</label>
+                <input type="text" name="phone" id="phone" value="">
+                <label for="email">E-post</label>
+                <input type="email" name="email" id="email" value="">
+                <input type="submit" value="Lagre">
+            </form>
+        </div>
+        <button onclick="logout()">Logg ut</button>
+        
+        <script src="/leder.js" defer ></script>
+    </main>
+  
+</body>
+</html>
